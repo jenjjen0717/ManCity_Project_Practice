@@ -1,0 +1,653 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background-color: #98c5e9;
+}
+
+header {
+  width: 100%;
+  padding: 1.25rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  transition: all 0.5s ease;
+}
+header .logo a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #001838;
+  text-decoration: none;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+header nav a {
+  text-decoration: none;
+  color: #001838;
+  font-size: 1rem;
+  margin-left: 4rem;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.5rem;
+  transition: all 0.25s ease;
+}
+header nav a:hover {
+  background-color: white;
+  color: #001838;
+}
+header nav .loginBtn {
+  border-radius: 5px;
+  background-color: #001838;
+  color: white;
+}
+header nav .loginBtn:hover {
+  background-color: #00285b;
+  color: white;
+}
+header nav .active {
+  color: white;
+}
+
+#home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  overflow: hidden;
+}
+#home img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+#home h1 {
+  position: absolute;
+  top: 0;
+  color: white;
+  font-size: 10rem;
+  font-family: sans-serif;
+  z-index: 0;
+}
+#home::before {
+  content: "";
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, #98c5e9, transparent);
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#fixture {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+#fixture h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #001838;
+}
+#fixture .fixture {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#fixture .fixture .fixture-month {
+  flex: 1 1 450px;
+}
+#fixture .fixture .fixture-month h3 {
+  font-size: 2rem;
+  margin: 1rem 0.5rem;
+  color: white;
+}
+#fixture .fixture .fixture-month .fixture-box {
+  border-left: 2px solid #001838;
+  flex-wrap: wrap;
+}
+#fixture .fixture .fixture-month .fixture-box .fixture-content {
+  position: relative;
+  flex: 1 1 150px;
+  display: flex;
+  padding: 1rem;
+  border: #001838 2px solid;
+  border-radius: 5px;
+  margin: 1.5rem;
+  background-color: #3bd6ff;
+}
+#fixture .fixture .fixture-month .fixture-box .fixture-content::before {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: -2.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #001838;
+}
+#fixture .fixture .fixture-month .fixture-box .fixture-content .fixture-date .date {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+#fixture .fixture .fixture-month .fixture-box .fixture-content .fixture-date .type {
+  font-size: 0.75rem;
+  color: #001838;
+}
+#fixture .fixture .fixture-month .fixture-box .fixture-content .detail {
+  flex: 3 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  margin-left: 1.5rem;
+  gap: 1rem;
+}
+#fixture .fixture .fixture-month .fixture-box .fixture-content .detail h5 {
+  width: 45%;
+  color: #001838;
+}
+#fixture .fixture .fixture-month .fixture-box .fixture-content .detail h5:first-child {
+  text-align: right;
+}
+#fixture .fixture .fixture-month .fixture-box .fixture-content .detail .time {
+  width: 20%;
+  text-align: center;
+  font-size: 1rem;
+  background-color: rgba(152, 197, 233, 0.75);
+}
+
+.title h1 {
+  font-size: 3rem;
+  margin: 50px 0 0 100px;
+  color: transparent;
+  position: relative;
+  -webkit-text-stroke: #001838 1.5px;
+  background-image: linear-gradient(#001838, #001838);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  animation: textTyping 6s linear infinite;
+  animation-delay: 2s;
+}
+
+.players {
+  width: 100%;
+  padding: 50px 100px;
+}
+.players h2 {
+  margin-bottom: 2rem;
+}
+.players .players-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.players .players-content .player-card {
+  width: 18vw;
+  border: #001838 2px solid;
+  background-color: white;
+  z-index: 0;
+  padding-top: 1rem;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgba(0, 24, 56, 0.5);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.players .players-content .player-card::before {
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: circle(0);
+          clip-path: circle(0);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #3bd6ff;
+  transition: 0.5s ease;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #001838;
+}
+.players .players-content .player-card:hover::before {
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
+}
+.players .players-content .player-card img {
+  width: 80%;
+  z-index: 1;
+}
+.players .players-content .player-card .name {
+  background-color: #001838;
+  height: 40%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.players .players-content .player-card .name p {
+  -webkit-text-stroke: 4px #001838;
+  color: transparent;
+  font-size: 5.5rem;
+  font-weight: bold;
+  position: absolute;
+  font-family: sans-serif;
+  top: 0;
+  right: 0.5rem;
+  z-index: -1;
+}
+.players .players-content .player-card .name h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #98c5e9;
+}
+.players .players-content .player-card .name .country {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.forwards .players-content .player-card:nth-child(1)::before {
+  content: "31 January 2000";
+}
+.forwards .players-content .player-card:nth-child(2)::before {
+  content: "21 July 2000";
+}
+.forwards .players-content .player-card:nth-child(3)::before {
+  content: "21 February 1991";
+}
+
+.midfielders .players-content .player-card:nth-child(1)::before {
+  content: "28 June 1991";
+}
+.midfielders .players-content .player-card:nth-child(2)::before {
+  content: "28 May 2000";
+}
+.midfielders .players-content .player-card:nth-child(3)::before {
+  content: "10 September 1995";
+}
+.midfielders .players-content .player-card:nth-child(4)::before {
+  content: "24 October 1990";
+}
+.midfielders .players-content .player-card:nth-child(5)::before {
+  content: "22 June 1996";
+}
+.midfielders .players-content .player-card:nth-child(6)::before {
+  content: "6 May 2002";
+}
+.midfielders .players-content .player-card:nth-child(7)::before {
+  content: "7 January 2003";
+}
+.midfielders .players-content .player-card:nth-child(8)::before {
+  content: "2 December 1995";
+}
+.midfielders .players-content .player-card:nth-child(9)::before {
+  content: "10 August 1994";
+}
+
+.defenders .players-content .player-card:nth-child(1)::before {
+  content: "19 July 1995";
+}
+.defenders .players-content .player-card:nth-child(2)::before {
+  content: "18 February 1995";
+}
+.defenders .players-content .player-card:nth-child(3)::before {
+  content: "14 May 1997";
+}
+.defenders .players-content .player-card:nth-child(4)::before {
+  content: "4 September 2000";
+}
+.defenders .players-content .player-card:nth-child(5)::before {
+  content: "27 May 1994";
+}
+.defenders .players-content .player-card:nth-child(6)::before {
+  content: "21 November 2004";
+}
+.defenders .players-content .player-card:nth-child(7)::before {
+  content: "28 May 1994";
+}
+.defenders .players-content .player-card:nth-child(8)::before {
+  content: "28 May 1990";
+}
+
+.goalKeepers .players-content .player-card:nth-child(1)::before {
+  content: "25 September 1985";
+}
+.goalKeepers .players-content .player-card:nth-child(2)::before {
+  content: "17 August 1993";
+}
+.goalKeepers .players-content .player-card:nth-child(3)::before {
+  content: "6 November 1992";
+}
+
+.stadium-home {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-self: center;
+}
+.stadium-home img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+.stadium-home h1 {
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+  font-size: 6rem;
+  position: relative;
+  margin-top: 10rem;
+  color: #001838;
+}
+.stadium-home::before {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(200, 214, 235, 0) 0%, rgba(190, 210, 235, 0.1166841737) 25%, rgba(179, 206, 235, 0.287552521) 50%, rgba(165, 202, 234, 0.6488970588) 75%, rgb(152, 197, 233) 100%);
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.stadium-about {
+  padding: 50px 100px 0 100px;
+}
+.stadium-about p {
+  margin-bottom: 2rem;
+  line-height: 2rem;
+  font-size: 1.25rem;
+  text-indent: 2em;
+}
+.stadium-about .stadium-pic {
+  height: 40vh;
+  position: relative;
+}
+.stadium-about .stadium-pic i {
+  position: absolute;
+  background-color: #3bd6ff;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  border: #001838 2px solid;
+}
+.stadium-about .stadium-pic i:first-child {
+  left: -20px;
+  top: 50%;
+}
+.stadium-about .stadium-pic i:last-child {
+  right: -20px;
+  top: 50%;
+}
+.stadium-about .stadium-pic .carousel {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+}
+.stadium-about .stadium-pic .carousel img {
+  height: 40vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.stadium-info {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stadium-info h2 {
+  margin-bottom: 4rem;
+  font-size: 2.5rem;
+  color: #001838;
+}
+.stadium-info .card {
+  display: flex;
+  height: 50%;
+  background-color: white;
+  box-shadow: 5px 5px 5px rgba(0, 24, 56, 0.5);
+}
+.stadium-info .card .card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.stadium-info .card .card-left table tr td {
+  padding: 1rem;
+  color: #001838;
+}
+.stadium-info .card .card-left table tr td:nth-child(1) {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+footer {
+  width: 100%;
+  height: 35vh;
+  background-color: #001838;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+}
+footer .social {
+  width: 35vw;
+  display: flex;
+  justify-content: space-between;
+}
+footer .social a {
+  text-decoration: none;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50px;
+  border: #3bd6ff solid 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  color: #3bd6ff;
+  font-size: 2.5rem;
+  transition: all 0.25s ease;
+}
+footer .social a i {
+  z-index: 1;
+}
+footer .social a::before {
+  content: "";
+  background-color: #3bd6ff;
+  z-index: 0;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease;
+}
+footer .social a:hover::before {
+  width: 100%;
+}
+footer .social a:hover {
+  color: #001838;
+}
+
+.login-page {
+  position: relative;
+}
+.login-page .login-bg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -10;
+}
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(135, 134, 134, 0.5);
+  z-index: 0;
+}
+
+.login-register {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-register .box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: #001838 2px solid;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 24, 56, 0.5);
+  height: 440px;
+  width: 600px;
+  padding: 40px;
+  overflow: hidden;
+}
+.login-register .box button {
+  z-index: 10;
+}
+.login-register .box button i {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.login-register .box .form {
+  width: 100%;
+  padding: 2rem;
+}
+.login-register .box .form h2 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.login-register .box .form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-register .box .form form .input-box {
+  position: relative;
+  width: 80%;
+  height: 35px;
+  border-bottom: #001838 2px solid;
+  margin: 1.25rem 0;
+}
+.login-register .box .form form .input-box input {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+.login-register .box .form form .remember-forgot {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+.login-register .box .form form .remember-forgot a {
+  text-decoration: none;
+  color: #001838;
+}
+.login-register .box .form form .remember-forgot a:hover {
+  text-decoration: underline;
+}
+.login-register .box .form form .submitBtn {
+  width: 80%;
+  height: 35px;
+  margin: 1rem;
+  background-color: #001838;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.login-register .box .form form .switch {
+  display: flex;
+  color: #001838;
+  gap: 0.5rem;
+}
+.login-register .box .form form .switch a {
+  text-decoration: none;
+  color: #001838;
+  cursor: pointer;
+}
+.login-register .box .form form .switch a:hover {
+  text-decoration: underline;
+}
+.login-register .box .login {
+  transition: all 1s ease;
+  transform: translateX(0);
+}
+.login-register .box .register {
+  position: absolute;
+  transition: all 1s ease;
+  transform: translateX(600px);
+}
+.login-register .switch-page .login {
+  transition: all 1s ease;
+  transform: translateX(-600px);
+}
+.login-register .switch-page .register {
+  transition: all 1s ease;
+  transform: translate(0);
+}
+
+@keyframes textTyping {
+  0% {
+    background-position: -75rem 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}/*# sourceMappingURL=style.css.map */

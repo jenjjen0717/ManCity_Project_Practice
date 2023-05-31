@@ -1,0 +1,751 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background-color: #98c5e9;
+}
+//header
+header {
+  // background-color: aquamarine;
+  width: 100%;
+  padding: 1.25rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  transition: all 0.5s ease;
+
+  .logo a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #001838;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      color: #001838;
+      font-size: 1rem;
+      margin-left: 4rem;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 0.5rem;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background-color: white;
+        color: #001838;
+      }
+    }
+
+    .loginBtn {
+      // border: #001838 2px solid;
+      border-radius: 5px;
+      background-color: #001838;
+      color: white;
+
+      &:hover {
+        background-color: #00285b;
+        color: white;
+      }
+    }
+
+    .active {
+      color: white;
+    }
+  }
+}
+//index.html homepage
+#home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  h1 {
+    position: absolute;
+    top: 0;
+    color: white;
+    font-size: 10rem;
+    font-family: sans-serif;
+    z-index: 0;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #98c5e9, transparent);
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+//index.html fixture
+#fixture {
+  // width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: #001838;
+  }
+
+  .fixture {
+    width: 100%;
+    display: flex;
+    // background-color: aliceblue;
+    flex-wrap: wrap;
+
+    .fixture-month {
+      flex: 1 1 450px;
+
+      h3 {
+        font-size: 2rem;
+        margin: 1rem 0.5rem;
+        color: white;
+      }
+
+      .fixture-box {
+        border-left: 2px solid #001838;
+        flex-wrap: wrap;
+
+        .fixture-content {
+          position: relative;
+          flex: 1 1 150px;
+          display: flex;
+          padding: 1rem;
+          border: #001838 2px solid;
+          border-radius: 5px;
+          margin: 1.5rem;
+          background-color: #3bd6ff;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 45%;
+            left: -2.2rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #001838;
+          }
+
+          .fixture-date {
+            .date {
+              color: white;
+              margin-bottom: 0.5rem;
+              font-size: 1.25rem;
+            }
+
+            .type {
+              font-size: 0.75rem;
+              color: #001838;
+            }
+          }
+
+          .detail {
+            flex: 3 1 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            margin-left: 1.5rem;
+            gap: 1rem;
+
+            h5 {
+              width: 45%;
+              color: #001838;
+              &:first-child {
+                text-align: right;
+              }
+            }
+
+            .time {
+              width: 20%;
+              text-align: center;
+              font-size: 1rem;
+              background-color: rgba(152, 197, 233, 0.75);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.title {
+  h1 {
+    font-size: 3rem;
+    margin: 50px 0 0 100px;
+    color: transparent;
+    position: relative;
+    -webkit-text-stroke: #001838 1.5px;
+    background-image: linear-gradient(#001838, #001838);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: textTyping 6s linear infinite;
+    animation-delay: 2s;
+  }
+}
+
+.players {
+  width: 100%;
+  padding: 50px 100px;
+  // border-bottom: #001838 2px solid;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .players-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .player-card {
+      width: 18vw;
+      border: #001838 2px solid;
+      background-color: white;
+      z-index: 0;
+      padding-top: 1rem;
+      text-align: center;
+      box-shadow: 5px 5px 5px rgba(0, 24, 56, 0.5);
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        width: 100%;
+        height: 100%;
+        clip-path: circle(0);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #3bd6ff;
+        transition: 0.5s ease;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #001838;
+      }
+
+      &:hover::before {
+        clip-path: circle(100%);
+      }
+
+      img {
+        width: 80%;
+        z-index: 1;
+      }
+
+      .name {
+        background-color: #001838;
+        height: 40%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          -webkit-text-stroke: 4px #001838;
+          color: transparent;
+          font-size: 5.5rem;
+          font-weight: bold;
+          position: absolute;
+          font-family: sans-serif;
+          top: 0;
+          right: 0.5rem;
+          z-index: -1;
+        }
+
+        h3 {
+          text-align: center;
+          font-size: 1.5rem;
+          color: #98c5e9;
+        }
+        .country {
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.forwards {
+  .players-content {
+    .player-card {
+      &:nth-child(1)::before {
+        content: "31 January 2000";
+      }
+      &:nth-child(2)::before {
+        content: "21 July 2000";
+      }
+      &:nth-child(3)::before {
+        content: "21 February 1991";
+      }
+    }
+  }
+}
+
+.midfielders {
+  .players-content {
+    .player-card {
+      &:nth-child(1)::before {
+        content: "28 June 1991";
+      }
+      &:nth-child(2)::before {
+        content: "28 May 2000";
+      }
+      &:nth-child(3)::before {
+        content: "10 September 1995";
+      }
+      &:nth-child(4)::before {
+        content: "24 October 1990";
+      }
+      &:nth-child(5)::before {
+        content: "22 June 1996";
+      }
+      &:nth-child(6)::before {
+        content: "6 May 2002";
+      }
+      &:nth-child(7)::before {
+        content: "7 January 2003";
+      }
+      &:nth-child(8)::before {
+        content: "2 December 1995";
+      }
+      &:nth-child(9)::before {
+        content: "10 August 1994";
+      }
+    }
+  }
+}
+
+.defenders {
+  .players-content {
+    .player-card {
+      &:nth-child(1)::before {
+        content: "19 July 1995";
+      }
+      &:nth-child(2)::before {
+        content: "18 February 1995";
+      }
+      &:nth-child(3)::before {
+        content: "14 May 1997";
+      }
+      &:nth-child(4)::before {
+        content: "4 September 2000";
+      }
+      &:nth-child(5)::before {
+        content: "27 May 1994";
+      }
+      &:nth-child(6)::before {
+        content: "21 November 2004";
+      }
+      &:nth-child(7)::before {
+        content: "28 May 1994";
+      }
+      &:nth-child(8)::before {
+        content: "28 May 1990";
+      }
+    }
+  }
+}
+
+.goalKeepers {
+  .players-content {
+    .player-card {
+      &:nth-child(1)::before {
+        content: "25 September 1985";
+      }
+      &:nth-child(2)::before {
+        content: "17 August 1993";
+      }
+      &:nth-child(3)::before {
+        content: "6 November 1992";
+      }
+    }
+  }
+}
+//stadium.html
+.stadium-home {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-self: center;
+  // align-items: center;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+  }
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+    font-size: 6rem;
+    position: relative;
+    margin-top: 10rem;
+    color: #001838;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(
+      circle,
+      rgba(200, 214, 235, 0) 0%,
+      rgba(190, 210, 235, 0.11668417366946782) 25%,
+      rgba(179, 206, 235, 0.28755252100840334) 50%,
+      rgba(165, 202, 234, 0.6488970588235294) 75%,
+      rgba(152, 197, 233, 1) 100%
+    );
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.stadium-about {
+  padding: 50px 100px 0 100px;
+
+  p {
+    margin-bottom: 2rem;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    text-indent: 2em;
+  }
+
+  .stadium-pic {
+    height: 40vh;
+    position: relative;
+    i {
+      position: absolute;
+      background-color: #3bd6ff;
+      font-size: 2.5rem;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 10;
+      border: #001838 2px solid;
+      &:first-child {
+        left: -20px;
+        top: 50%;
+      }
+
+      &:last-child {
+        right: -20px;
+        top: 50%;
+      }
+    }
+    .carousel {
+      display: flex;
+      gap: 1rem;
+      overflow: hidden;
+      position: relative;
+      scroll-behavior: smooth;
+      img {
+        height: 40vh;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.stadium-info {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    color: #001838;
+  }
+
+  .card {
+    display: flex;
+    height: 50%;
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0, 24, 56, 0.5);
+
+    .card-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      table {
+        tr {
+          td {
+            padding: 1rem;
+            color: #001838;
+
+            &:nth-child(1) {
+              font-weight: bold;
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//footer
+footer {
+  width: 100%;
+  height: 35vh;
+  background-color: #001838;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+
+  .social {
+    width: 35vw;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      // background-color: white;
+      height: 3.5rem;
+      width: 3.5rem;
+      border-radius: 50px;
+      border: #3bd6ff solid 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      color: #3bd6ff;
+      font-size: 2.5rem;
+      transition: all 0.25s ease;
+
+      i {
+        z-index: 1;
+      }
+
+      &::before {
+        content: "";
+        background-color: #3bd6ff;
+        z-index: 0;
+        width: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.5s ease;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
+      &:hover {
+        color: #001838;
+      }
+    }
+  }
+}
+
+//login page
+.login-page {
+  position: relative;
+  .login-bg {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    z-index: -10;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(135, 134, 134, 0.5);
+    z-index: 0;
+  }
+}
+.login-register {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border: #001838 2px solid;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 24, 56, 0.5);
+    height: 440px;
+    width: 600px;
+    padding: 40px;
+    overflow: hidden;
+
+    button {
+      z-index: 10;
+      i {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+
+    .form {
+      width: 100%;
+      // background-color: #3bd6ff;
+      padding: 2rem;
+      h2 {
+        text-align: center;
+        font-size: 2.5rem;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .input-box {
+          position: relative;
+          width: 80%;
+          height: 35px;
+          border-bottom: #001838 2px solid;
+          margin: 1.25rem 0;
+
+          input {
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+          }
+        }
+        .remember-forgot {
+          width: 80%;
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.75rem;
+
+          a {
+            text-decoration: none;
+            color: #001838;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .submitBtn {
+          width: 80%;
+          height: 35px;
+          margin: 1rem;
+          background-color: #001838;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          font-size: 1.25rem;
+          font-weight: 300;
+          cursor: pointer;
+        }
+
+        .switch {
+          display: flex;
+          color: #001838;
+          gap: 0.5rem;
+          a {
+            text-decoration: none;
+            color: #001838;
+            cursor: pointer;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .login {
+      transition: all 1s ease;
+      transform: translateX(0);
+    }
+    .register {
+      position: absolute;
+      transition: all 1s ease;
+      transform: translateX(600px);
+    }
+  }
+  .switch-page {
+    .login {
+      transition: all 1s ease;
+      transform: translateX(-600px);
+    }
+    .register {
+      transition: all 1s ease;
+      transform: translate(0);
+    }
+  }
+}
+
+@keyframes textTyping {
+  0% {
+    background-position: -75rem 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

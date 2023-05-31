@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jane Fu" />
+    <meta name="robot" content="index, follow" />
+    <meta name="description" content="" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="login-page">
+    <img class="login-bg" src="./img/ip4_2384.png.png" alt="" />
+    <section class="login-register">
+      <div class="box">
+        <button onclick="history.back()">
+          <i class="bx bx-arrow-back"></i>
+        </button>
+        <div class="form login">
+          <h2>Login</h2>
+          <form action="">
+            <div class="input-box">
+              <input
+                class="loginEmail"
+                type="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <input
+                class="loginPW"
+                type="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <div class="remember-forgot">
+              <div class="remember">
+                <input type="checkbox" name="" id="remember" />
+                <label for="remember">Remember Me</label>
+              </div>
+              <a href="#">Forgot Password?</a>
+            </div>
+            <input
+              type="submit"
+              value="Submit"
+              class="submitBtn"
+              onclick="back()"
+            />
+            <div class="switch">
+              <p>Don't have an account?</p>
+              <a class="switch-to-register">Register Now.</a>
+            </div>
+          </form>
+        </div>
+        <div class="form register">
+          <h2>Register</h2>
+          <form action="">
+            <div class="input-box">
+              <input type="text" placeholder="Username" required />
+            </div>
+            <div class="input-box">
+              <input type="email" placeholder="Email" required />
+            </div>
+            <div class="input-box">
+              <input type="password" placeholder="Password" required />
+            </div>
+            <input type="Submit" value="Register" class="submitBtn" />
+            <div class="switch">
+              <p>Already have an account?</p>
+              <a class="switch-to-login">Login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="./app.js"></script>
+</html>
